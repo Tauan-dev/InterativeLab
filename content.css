@@ -134,7 +134,7 @@ body{
     width: 617px;
     height: 56px;
     left: 536px;
-    top: 2157px;
+    top: 2140px;
     
 }
 
@@ -181,14 +181,20 @@ body{
 
 }
 
+#guide-box{
+    max-width:1517px;
+    min-height:854px;
+    background : rgb(187, 29, 29);
+}
+
 #team-box{
    
     max-width: 1517px;
-    min-height: 900px;
+    min-height: 793px;
     background: linear-gradient(76.27deg, rgba(34, 94, 150, 0.93) 0%, rgba(0, 195, 255, 0.39) 100%);
-    display:grid;
+    /*display:grid;
     grid-template-columns:1fr,1fr;
-    grid-template-rows:auto;
+    grid-template-rows:auto;*/
 }
 
 #team-box h1{
