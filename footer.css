@@ -4,13 +4,13 @@
 footer{
     position: absolute;
     width: 1517px;
-    height: 503px;
+    height: 390px;
     left: 0px;
     top: 4497px;
     padding: 0px;
     
     background: rgba(6, 149, 191, 0.91);
-    border-radius: 10px;
+    border-radius: 0px;
     display:grid;
     grid-template-columns: 1fr,1fr;
     grid-template-rows: auto;
