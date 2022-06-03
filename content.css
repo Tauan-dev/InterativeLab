@@ -187,16 +187,25 @@ body{
     background : rgb(187, 29, 29);
 }
 
-#team-box{
-    display:grid;
+.team{
     max-width: 1517px;
     min-height: 793px;
     background: linear-gradient(76.27deg, rgba(34, 94, 150, 0.93) 0%, rgba(0, 195, 255, 0.39) 100%);
-    grid-template-columns: 1fr,1fr,1fr,1fr;
-    grid-gap:20px;
+}
+.team > h1{
+    font-family: 'Raleway',sans-serif;
+    font-size: 60px;
+    display: flex;
+    padding: 30px;
     justify-content: center;
     align-items: center;
-    align-content: center;
+}
+#team-box{
+    display:grid;
+    grid: repeat(2,1fr)  / repeat(3,1fr);
+    padding-left: 20px;
+    padding-top: 20px;
+    grid-gap: 20px;
 }
 div.equipe {  
     border:2px solid black;
@@ -217,11 +226,4 @@ div.equipe {
 }
 */
 
-
-#team-box h1{
-    font-family: 'Raleway',sans-serif;
-    font-size: 60px;
-    text-align: center;
-    grid-column :1/3;
-}
 
