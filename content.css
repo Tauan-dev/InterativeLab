@@ -6,7 +6,7 @@ body{
 }
 
 
-#ilabknow{
+/*#ilabknow{
     position: relative;
     width: 346px;
     height:71px;
@@ -29,14 +29,14 @@ body{
 
     text-shadow: 0px 6.85869px 6.85869px rgba(0, 0, 0, 0.25);
     transform: rotate(-0.41deg);
-}
+}*/
 
 .topo-1{
     position: absolute;
     width: 897.05px;
     height: 72px;
     left: 449px;
-    top: 411px;
+    top: 391px;
 
     font-family: 'Roboto';
     font-style: normal;
@@ -45,7 +45,7 @@ body{
     line-height: 72px;
     text-align: center;
 
-    color: #3e8ebc;
+    color: #368cbd;
 }
 
 .topo-2{
@@ -53,7 +53,7 @@ body{
     width: 652.67px;
     height: 77.66px;
     left: 623px;
-    top: 523.82px;
+    top: 570px;
 
     font-family: 'Roboto';
     font-style: normal;
@@ -68,7 +68,7 @@ body{
     max-height: 406px;
     position: absolute;
     left: 60px;
-    top: 535px;
+    top: 515px;
 }
 #top-box{
     max-width: 1517px;
@@ -76,10 +76,10 @@ body{
     /*background-color: rgb(185, 32, 32);*/
 }
 #midle-box{
-    background-image:url(imagens/estadio.png);
+    
     max-width: 1517px;
     min-height: 900px;
-  /*  background-color: rgb(32, 185, 32);*/
+    background-color: rgba(7, 207, 194, 0.801);
 }
  #midle-box img{
      max-width: 1517px;
@@ -133,7 +133,7 @@ body{
     display:grid;
     width: 617px;
     height: 56px;
-    left: 536px;
+    left: 652px;
     top: 2140px;
     
 }
@@ -177,14 +177,14 @@ body{
     max-width:355px;
     max-height:675px;
     margin-top:150px;
-    left:73px;
+    left:135px;
 
 }
 
 #guide-box{
     max-width:1517px;
     min-height:854px;
-    background : rgb(187, 29, 29);
+    background-image:url(imagens/estadio.png);
 }
 
 .team{
@@ -193,24 +193,29 @@ body{
     background: linear-gradient(76.27deg, rgba(34, 94, 150, 0.93) 0%, rgba(0, 195, 255, 0.39) 100%);
 }
 .team > h1{
-    font-family: 'Raleway',sans-serif;
+    font-family: 'Roboto',sans-serif;
     font-size: 60px;
     display: flex;
     padding: 30px;
     justify-content: center;
     align-items: center;
+    color: #ffff;
+
 }
 #team-box{
     display:grid;
     grid: repeat(2,1fr)  / repeat(3,1fr);
     padding-left: 20px;
     padding-top: 20px;
-    grid-gap: 20px;
+    grid-gap: 10px;
+    align-items:center;
+    justify-content:center;
 }
 div.equipe {  
     border:2px solid black;
     width: 200px;
-    height: 200px;    
+    height: 200px;  
+    border-radius: 15px;  
 }
 
 /*#cx1{

@@ -1,0 +1,32 @@
+métodos de validação de sites - links
+
+
+https://blog.onedaytesting.com.br/validacao-online-analise-superficial/
+http://www.acessibilidadelegal.com/13-validacao.php
+https://cta.ifrs.edu.br/avaliacao-de-acessibilidade-em-sites/
+https://distrito.me/blog/validacao-de-startups/
+
+quando deve ser aplicado?
+qual a metodologia utilizada para validação de sites? 
+qual o número de participantes ideal?
+para quais grupos de pessoas podemos enviar? 
+quais perguntas devem ser feitas?
+
+	
+	
+	Análises continuas são feitas sobre a relação de interação do público com uma  interface, seguindo algumas regras, que naturalmente leva o usuário a alcançar um objetivo específico, seja em sua mente ou o objetivo final da plataforma. A aplicação de testes de validação pode ser feita em várias etapas seja ela no início do projeto, na etapa de desenvolvimento, antes do lançamento e quando o projeto tem um certo tempo de vida, onde o foco para Plataforma InteractiveLab será antes ou depois do lançamento, para a coleta de informações sobre a usabilidade do site.
+	"Usabilidade é definida pelo ISO 9241-11:2018 como um atributo relativo a respeito da facilidade com que usuários específicos realizam tarefas específicas em determinados contextos de uso de um produto com eficácia, eficiência e satisfação (ISO, 2018)."
+	A modalidade remota será a melhor alternativa para coleta de dados, devido a possível dificuldade em reunir um grupo de usuários para exercer o teste e a facilidade do contato com o usuário final, e consequentemente do feedback recebido por eles. Podemos definir as etapas do teste de usabilidade do site em tópicos diferentes, onde eles são:
+	
+Definição do público-alvo : 
+ 	Enviar o site e o aplicativo para pessoas com níveis de entendimento diferentes sendo eles o expert, o intermediário e o leigo, para que possam avaliar de formas diversas, e é importante destacar a importância dos testes, mesmo que seja feito na própria equipe com pessoas que não participam do projeto, um teste simples é melhor que nenhum.
+	Definição das tarefas;
+
+Recrutamento:
+	As tecnologias de comunicação em rede podem ser um instrumento eficiente para divulgar o processo de teste e atrair usuários parar realizar, por se constituir de uma poderosa ferramenta de circulação de informação. As novas tecnologias facilitam a coleta de dados por permitir a criação de meios mais interativos, liberandos os usuários de limitações de espaço e tempo, tornando a comunicação mais flexível. Através das redes sociais será possível recrutar pessoas para testar a usabilidade do site. 
+
+Aplicação de teste piloto:
+	Feito com um grupo menor de pessoas, é interessante para dar um norte ao desenvolver do processo de validação.
+	Aplicação dos testes;
+	Produção e apresentação do relatório.
+	
