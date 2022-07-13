@@ -186,7 +186,13 @@ body{
     min-height:854px;
     background-image:url(imagens/estadio.png);
 }
-
+/*#guide-box iframe {
+    position:absolute;
+    top:5%;
+    left:5%;
+    width:70%;
+    height: 70%;
+}*/
 .team{
     max-width: 1517px;
     min-height: 793px;
@@ -206,11 +212,20 @@ body{
     display:grid;
     grid: repeat(2,1fr)  / repeat(3,1fr);
     padding-left: 20px;
-    padding-top: 20px;
     grid-gap: 10px;
-    align-items:center;
-    justify-content:center;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
 }
+
+#team-box p {
+    color:#ffff;
+    margin-left:250px;
+    font-family: 'Roboto', sans-serif;
+    justify-content:center;
+
+} 
+
 div.equipe {  
     border:2px solid black;
     width: 200px;
@@ -218,17 +233,23 @@ div.equipe {
     border-radius: 15px;  
 }
 
-/*#cx1{
-    
+#cx1 {
+    background-image:url(imagens/equipe/marcosMenuchi.png);
+    background-size:200px 200px;
+
 }
-#cx2{
-    
-#cx3{
-    
+#cx2 {
+    background-image:url(imagens/equipe/marceloHonda.png);
+    background-size:200px 200px;
 }
-#cx4{
-   
+#cx3 {
+    background-image:url(imagens/equipe/matheusAlmeida.jpeg);
+    background-size:200px 200px;
 }
-*/
+#cx4 {
+    background-image:url(imagens/equipe/matheusCardoso.jpeg);
+    background-size:200px 200px;
+}
+
 
 

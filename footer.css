@@ -47,6 +47,8 @@ footer{
     grid-row: 3/4;
     grid-column:2/4;
     padding:0px;
+    margin-left: 60px;
+    align-items:center;
     
 }
 .make{
