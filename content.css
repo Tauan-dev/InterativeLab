@@ -3,6 +3,11 @@
 
 body{
     background-color: rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  
+    /* Just for parent demo size */
+    height: 100vh;
 }
 
 
@@ -71,19 +76,18 @@ body{
     top: 515px;
 }
 #top-box{
-    max-width: 1517px;
+    max-width: 100%;
     min-height: 900px;
     /*background-color: rgb(185, 32, 32);*/
 }
 #midle-box{
     
-    max-width: 1517px;
+    max-width: 100%;
     min-height: 900px;
     background-color: rgba(7, 207, 194, 0.801);
 }
- #midle-box img{
-     max-width: 1517px;
- }
+
+
 #midle-box h1{
     position: absolute;
     width: 532px;
@@ -123,7 +127,7 @@ body{
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 #function-box{
-    max-width: 1517px;
+    max-width: 100%;
     min-height: 900px;
     background: linear-gradient(85.68deg, #00DE89 16.94%, rgba(0, 255, 137, 0.54) 64.25%, rgba(0, 255, 206, 0.74) 89.15%);
    /* background-color: #bb1414;*/
@@ -182,9 +186,10 @@ body{
 }
 
 #guide-box{
-    max-width:1517px;
+    max-width:100%;
     min-height:854px;
     background-image:url(imagens/estadio.png);
+    background-size:100%;
 }
 /*#guide-box iframe {
     position:absolute;
@@ -194,7 +199,7 @@ body{
     height: 70%;
 }*/
 .team{
-    max-width: 1517px;
+    max-width: 100%;
     min-height: 793px;
     background: linear-gradient(76.27deg, rgba(34, 94, 150, 0.93) 0%, rgba(0, 195, 255, 0.39) 100%);
 }
@@ -260,10 +265,6 @@ div.equipe:hover  {
     background:rgba(16, 148, 204, 0.384);
     display:block;
 }
-
-
-
-
 
 .curriculo{
     text-decoration:none;
