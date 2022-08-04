@@ -62,15 +62,16 @@ footer{
     font-size: 25px;
     text-align: center;
     font-weight:600;
-    margin-left:80px;
+    position:relative;
+    padding:0px;
     
+    top: 0px;
 }
 
 #rodape ul {
     display:flex;
     align-items: center;
     justify-content: center;
-   /* margin-left: 30px;*/
     flex-direction: row;
     margin-bottom:0px;
 }
@@ -107,11 +108,10 @@ footer{
 
 
 .nbcgib {
-    position: absolute;
+    position: relative;
     max-width: 172px;
-    max-height:162px;
-    grid-column:1/4;
-    margin-right:0px;
-    left: 1106px;
-    top:100px;
+    max-height: 162px;
+    grid-column:4/4;
+    right: 0px;
+    bottom: 140px;
 }

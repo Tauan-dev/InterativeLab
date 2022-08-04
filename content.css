@@ -6,8 +6,6 @@ body{
     display: grid;
     grid-template-rows: auto 1fr auto;
   
-    /* Just for parent demo size */
-    height: 100vh;
 }
 
 
@@ -89,18 +87,19 @@ body{
 
 
 #midle-box h1{
-    position: absolute;
-    width: 532px;
-    height: 68px;
-    left: 110px;
-    top: 1206px;
+    position: relative;
+    top: 24px;
+    padding:30px;
+    left:40%;
+   
 
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 60px;
     line-height: 70px;
-    text-align: center;
+    justify-content: center;
+    align-items: center;
 
     color: #FFFFFF;
 
@@ -130,15 +129,15 @@ body{
     max-width: 100%;
     min-height: 900px;
     background: linear-gradient(85.68deg, #00DE89 16.94%, rgba(0, 255, 137, 0.54) 64.25%, rgba(0, 255, 206, 0.74) 89.15%);
+    display:flex;
    /* background-color: #bb1414;*/
 }
 #function-box ul{
-    position: absolute;
-    display:grid;
+    position: relative;
     width: 617px;
     height: 56px;
-    left: 652px;
-    top: 2140px;
+    right:10%;
+    top: 150px;
     
 }
 
@@ -146,16 +145,17 @@ body{
     font-family:'Roboto';
     font-size:24px;  
     grid-column:1/2;
-    margin-bottom: 30px;;
+    margin-bottom: 30px;
     /*line-height: 60px;*/
 }
 
-#function-box button {
-    position: absolute;
+
+#function-box h1 {
+    position: relative;
     width: 442px;
     height: 70px;
-    left: 659px;
-    top: 1994px;
+    left: 40%;
+    top: 24px;
     border:none;
 
 
@@ -169,20 +169,22 @@ body{
     font-size: 56px;
     line-height: 70px;
     text-align: center;
+    justify-content: center;
+    align-items: center;
 
     color: #FFFFFF;
 
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+   
 }
  
 #function-box img{
     position: relative;
     border-radius: 20px;
     max-width:355px;
-    max-height:675px;
-    margin-top:150px;
-    left:135px;
-
+    max-height:605px;
+    top:150px;
+    right:80%;
 }
 
 #guide-box{
