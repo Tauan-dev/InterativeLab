@@ -4,8 +4,6 @@
 footer{
     width: 100%;
     height: 390px;
-    left: 0px;
-    top: 4497px;
     padding: 0px;
     
     background: rgba(6, 149, 191, 0.91);
@@ -60,10 +58,9 @@ footer{
     font-size: 25px;
     text-align: center;
     font-weight:600;
-    position:relative;
     padding:0px;
     
-    top: 0px;
+
 }
 
 #rodape ul {
@@ -85,29 +82,23 @@ footer{
 }
 
 .uesc {
-    position: relative;
+
     max-width: 189px;
     max-height:163px;
     grid-column:1/4;
-    left: 81px;
-    bottom:140px;
 }
 
 .gepecom {
-    position: relative;
+
     max-width: 172px;
     max-height:162px;
     grid-column:1/4;
-    left: 256px;
-    bottom:300px;
 }
 
 
 .nbcgib {
-    position: relative;
     max-width: 172px;
     max-height: 162px;
     grid-column: 4/4;
-    right: 0px;
-    bottom: 340px;
+
 }
