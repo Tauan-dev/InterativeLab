@@ -25,14 +25,16 @@
 
 <body>
     <header>
-        <div>
-            <img id="logo" src=imagens/logo-ilab.png alt="Logo">
+        <div id="cabeca" class="flexHeader">
+            <div class="flexHeader">
+                <img id="logo" src=imagens/logo-ilab.png alt="Logo">
 
-            <div>
                 <h1 id="ilab">
                     InterativeLab
                 </h1>
-
+            </div>
+            
+            <div class ="flexHeader">
                 <ul id="menu-h">
                     <li>
                         <a class="menu" href="#team-box" target="_self">Equipe</a>
@@ -63,16 +65,28 @@
     </header>
 
     <main>
-        <div id="top-box">
+        <div id="top-box" class="flex">
 
-            <div>
-                <h1 class="topo-1">
-                    O SOFTWARE DE ANÁLISE DE DESEMPENHO NO FUTEBOL
-                </h1>
-                <h2 class="topo-2">
-                    Desenvolvido para auxiliar nas tomadas de decisão utilizando redes sociais
-                </h2>
+            <div class="flexHeader">
+                <img class='login' src=imagens/celular-login.png alt="Tela de login">
+            </div>
 
+            <div class="flexColumn">
+                <div class="flexColumn">
+                    <div>
+                        <h1 class="topo-1">
+                            O SOFTWARE DE ANÁLISE DE DESEMPENHO NO FUTEBOL
+                        </h1>
+                    </div>
+                    
+                    <div class="flexColumn">
+                        <h2 class="topo-2">
+                            Desenvolvido para auxiliar nas tomadas de decisão utilizando redes sociais
+                        </h2>  
+                    </div>
+                  
+                </div>
+               
                 <a href="https://ilab-webapp-2.vercel.app/" target="_blank">
                     <div>
                         <button id='ilabknow'>
@@ -82,9 +96,7 @@
                 </a>
             </div>
 
-            <div>
-                <img class='login' src=imagens/celular-login.png alt="Tela de login">
-            </div>
+            
 
         </div>
 
@@ -151,6 +163,9 @@
             </div>
 
         </div>
+
+
+
         <div id='guide-box' class="flex"> <a name='guide-box'> </a>
             <div class="flex">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/VRmrNOQJ3HY"
@@ -211,31 +226,38 @@
 
     <footer id='rodape'>
         <div>
-            <div>
-                <div class='box-1'>
-                    Realização
+            <div class="flexFooter">
+                <div class="flexColumn" id="footerBox1">
+                    <div>
+                        Realização
+                    </div>
+                    
+                    <div class="flex">
+                        <img class='uesc' src=imagens/simbolo_uesc.png alt="UESC in Altum">
+                        <img class='gepecom' src=imagens/logo-GEPECOM.png alt="GEPECOM">
+                    </div>
+    
                 </div>
-
-                <img class='uesc' src=imagens/simbolo_uesc.png alt="UESC in Altum">
-                <img class='gepecom' src=imagens/logo-GEPECOM.png alt="GEPECOM">
+    
+                <div class="flexColumn" id="footerBox2">
+                    <div>
+                        Apoio
+                    </div>
+    
+                    <img class='nbcgib' src=imagens/nbcgib_logo.png alt="GEPECOM">
+    
+                </div>
 
             </div>
 
-            <div>
-                <div class='box-2'>
-                    Apoio
+            <div class="flexColumn">
+                <div class="flexColumn">
+                    <div class="flex" >
+                        Contatos <a name='contato'> </a>
+                    </div>
                 </div>
 
-                <img class='nbcgib' src=imagens/nbcgib_logo.png alt="GEPECOM">
-
-            </div>
-
-            <div>
-                <div class='box-3'>
-                    Contatos <a name='contato'> </a>
-                </div>
-
-                <ul class='box-4'>
+                <ul class="flex">
                     <li>
                         <a href="https://www.instagram.com/gepecom_uesc/" target="_blank" ref="external"><img
                                 class='social' src="./imagens/icons8-instagram-velho.svg" alt="instagram"></a>
@@ -245,7 +267,6 @@
                                 class='social' src="./imagens/icons8-facebook.svg" alt="facebook"></a>
                     </li>
                 </ul>
-
             </div>
 
         </div>
