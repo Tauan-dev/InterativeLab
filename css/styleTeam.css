@@ -1,0 +1,219 @@
+.content { 
+	float:left; width:92%; margin:0 4%; padding: 20px 0;
+	
+}
+
+
+
+
+/*Seu Código*/
+.section-seu-codigo    {
+	padding:30px 0px; 
+}
+
+.section-seu-codigo .content { float:left; 
+				padding:1em 0; 
+}
+
+.section_title               { width: 100%; float:left; margin-bottom:1em; font-size:1.3em; font-weight: 300; text-align: center; border-bottom: 1px; padding-bottom: 1em; }
+
+.box-artigo   { width:100%; 
+	float:left; 
+}
+
+/*Profile Card*/
+.card-blue   { 
+
+	width:100%; 
+	max-height:400px; 
+	height:100%; 
+	margin-bottom:30px; 
+	float:left; 
+	position:relative; 
+	overflow:hidden; 
+	border-radius:6px; 
+	transition: .5s; 
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5); 
+
+}
+
+.card-blue .img-box { 
+
+	position:relative; 
+	left:0; 
+	bottom:0; 
+	width:100%; 
+	height:100%; 
+	transition: .5s; 
+
+}
+
+.card-blue .img-box img  { 
+
+	width:100%; 
+	transition:.5s; 
+	-webkit-transform:scale(1.1); 
+	transform:scale(1.1); 
+
+}
+
+.card-blue:hover .img-box img { 
+
+	-webkit-transform:scale(1); 
+	transform:scale(1); 
+
+}
+
+.card-blue .desc       { 
+
+	position:absolute; 
+	width:100%; 
+	height:auto; 
+	bottom:0; 
+	transition:.5s; 
+	padding:20px; 
+	text-align:center; 
+	z-index:1; 
+}
+
+.card-blue .desc h4 { 
+
+	width:100%; 
+	font-size:1.2em; 
+	color:#fff; 
+	font-family:'open_sansbold';
+	margin-bottom:5px;   
+
+}
+
+.card-blue .desc p { 
+
+	width:100%; 
+	font-size:0.8em; 
+	color:#fff; 
+	font-family:'open_sansregular';
+
+}
+
+.card-blue .desc span { 
+
+	letter-spacing:8px; 	
+	font-family:'open_sansregular'; 
+
+}
+
+.card-blue .desc ul { 
+
+	display: flex; 
+	margin: 20px 0 0; 
+	padding:0; 
+	align-items:center; 
+	justify-content:center; 
+
+}
+
+.card-blue .desc ul li { 
+
+	list-style:none; 
+}
+
+.card-blue .desc ul li { 
+
+	margin-right:3px;  
+}
+
+.card-blue .desc ul li a { 
+
+	color:#00c9d0;
+	background-color:#ffffff;
+	border-radius:50px;
+	display:block; 
+	width:35px;
+	height:35px;     
+	line-height:40px;  
+	font-size:1em; 
+	text-decoration:none;
+	transition:.6s; 
+ 
+
+}
+
+.card-blue .desc ul li a:hover {
+
+	background-color: #2f2f2f;
+    color: #fff; 
+
+}
+
+.card-blue .desc.degradeBlue { 
+
+	background: linear-gradient(0deg, rgba(24, 178, 194, 0.9), transparent); 
+
+}
+
+/*768PX BREAKPOINT*/
+@media (min-width:48em){
+
+.card-blue { width:31.33%; max-height:430px; margin-right:3%; }
+.card-blue:nth-of-type(3n+0)  { margin-right:0; }
+
+} 
+
+/*Profile Card*/
+
+/*Começa o Responsivo*/
+
+/*480PX BREAKPOINT*/
+/*480 dividido por 16 = 30em*/
+@media (min-width:30em){
+
+.boxBannerTopo { padding:1em 0; }
+
+}
+
+/*600PX BREAKPOINT*/
+/*600 dividido por 16 = 37,5em*/
+@media (min-width:37em){
+
+
+} 
+
+/*768PX BREAKPOINT*/
+/*768 dividido por 16 = 48em*/
+@media (min-width:48em){
+
+
+} 
+
+/*960PX BREAKPOINT*/
+/*960 dividido por 16 = 60em*/
+@media (min-width:60em){
+
+ .section-seu-codigo          { padding:20px 0px; }
+ .section-seu-codigo .content { width:80%; padding:1em 0; margin:0 10%; }
+ .btn-download { width:35%; }
+
+}
+
+/*1280PX BREAKPOINT*/
+/*1280 dividido por 16 = 80em*/
+@media (min-width:80em){
+
+ 
+}
+
+/*1366PX BREAKPOINT*/
+/*1366 dividido por 16 = 85,375em*/
+@media (min-width:85em){
+
+ .content  { width:80%; margin:0 10%; }
+
+}
+
+/*1600PX BREAKPOINT*/
+/*1600 dividido por 16 = 100em*/
+@media (min-width:100em){
+
+
+}
+/*Fecha o Responsivo*/
