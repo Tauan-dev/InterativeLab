@@ -197,18 +197,15 @@ body{
     background-image:url(imagens/estadio.png);
     background-size:100%;
 }
-/*#guide-box iframe {
-    top:5%;
-    left:5%;
-    width:70%;
-    height: 70%;
-}*/
-#team{
+
+
+
+.team {
     max-width: 100%;
     min-height: 793px;
     background: linear-gradient(76.27deg, rgba(34, 94, 150, 0.93) 0%, rgba(0, 195, 255, 0.39) 100%);
 }
-#team > h1{
+.team > h1{
     font-family: 'Roboto',sans-serif;
     font-size: 60px;
     display: flex;

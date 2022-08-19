@@ -216,3 +216,69 @@
 	}
 	/*Fecha o Responsivo*/
 
+	@media(max-width:768px){
+		.container {
+			width:100%;
+			display:flex;
+			align-items: center;
+			float:none;
+		}	
+	
+	}
+
+	@media(max-width:768px){
+		.container {
+			width:90%;
+			float:none;
+		}	
+	
+		.team{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+		}
+
+		.main_contentcontainer{
+			margin-left: 180px;
+		}
+	}
+
+
+	@media(max-width:550){
+		.container {
+			width:80%;
+			float:none;
+		}	
+
+		.main_contentcontainer{
+			margin-left: 340px;
+		}		
+				
+	}
+
+	@media(max-width:500){
+		.container {
+			width:70%;
+			float:none;
+		}	
+	}
+
+	@media(max-width:470){
+		.container {
+			width:65%;
+			float:none;
+		}	
+	}
+
+	@media(max-width:420px){
+		.container {
+			width:53%;
+			float:none;
+		}
+		
+		.main_contentcontainer{
+			margin-left: 410px;
+		}		
+				
+	}
