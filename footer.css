@@ -3,7 +3,7 @@
 
 footer{
     width: 100%;
-    height: 400px;
+    height: 420px;
     padding: 0px;
     
     background: rgba(6, 149, 191, 0.91);
@@ -40,7 +40,17 @@ footer{
     color: #FFFF;
     font-family: 'Nunito Sans', sans-serif;
     font-style: normal;
-    font-size: 25px;
+    font-size: 20px;
+    text-align: center;
+    font-weight:600;
+
+}
+
+#rodape h2{
+    color: #FFFF;
+    font-family: 'Nunito Sans', sans-serif;
+    font-style: normal;
+    font-size: 18px;
     text-align: center;
     font-weight:600;
 
