@@ -1,0 +1,73 @@
+@charset "UTF-8";
+:root{
+    --primary: #225e96;
+    --primary-strong: #22628f;
+    --accent: #00c3ff;
+    --accent-2: #00de89;
+    --white: #ffffff;
+    --muted: rgba(255,255,255,0.85);
+    --container: 1200px;
+}
+
+*{box-sizing: border-box; margin: 0; padding: 0}
+
+body{font-family: 'Roboto', Arial, sans-serif;}
+
+.container{max-width:var(--container); margin: 0 auto; padding: 0 20px}
+
+.flexHeader{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+header{
+    width: 100%;
+    background: linear-gradient(180deg, var(--primary) 0%, var(--primary-strong) 100%);
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.15);
+    padding: 18px 0;
+}
+
+.brand-link{display:flex; align-items:center; gap:12px; text-decoration:none}
+
+#logo{width:72px; height:auto}
+
+#ilab{color:var(--white); font-size:28px; font-weight:700}
+
+/* Nav */
+nav{display:flex; align-items:center; gap:12px}
+
+#menu-h{list-style:none; display:flex; gap:4px; align-items:center}
+
+#menu-h li a{ display:inline-block; padding:10px 14px; text-decoration:none; color:var(--white); font-weight:600}
+
+#menu-h li a:hover, #menu-h li a:focus{color:var(--muted); outline:none}
+
+/* CTA */
+#downloadbuttom{ padding:12px 20px; border:none; border-radius:10px; background: linear-gradient(90deg,var(--accent) 0%, #00b6e6 100%); color:var(--white); font-weight:800; cursor:pointer}
+
+.header-cta{display:flex; align-items:center}
+
+/* Mobile menu toggle */
+#nav-toggle{display:none; background:transparent; border:0; padding:8px; cursor:pointer}
+.hamburger{display:block; width:26px; height:2px; background:var(--white); position:relative}
+.hamburger::before, .hamburger::after{content:''; position:absolute; left:0; width:26px; height:2px; background:var(--white)}
+.hamburger::before{top:-8px}
+.hamburger::after{top:8px}
+
+/* Responsive adjustments */
+@media (max-width:900px){
+    #menu-h{display:none; position:absolute; right:20px; top:72px; background:linear-gradient(180deg,var(--primary),var(--primary-strong)); padding:12px; border-radius:8px; flex-direction:column}
+    #menu-h.show{display:flex}
+    #nav-toggle{display:block}
+    #downloadbuttom{display:none}
+}
+
+@media (max-width:480px){
+    #ilab{font-size:20px}
+    #logo{width:56px}
+}
+
+.skip-link{position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden}
+.skip-link:focus{position:static; left:20px; top:20px; background:#000; color:#fff; padding:8px 12px; border-radius:4px}

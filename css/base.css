@@ -1,0 +1,30 @@
+/* Base: variables, reset import, typography */
+@charset "UTF-8";
+@import url('reset.css');
+
+:root{
+  --container:1200px;
+  --gap:24px;
+
+  --color-primary:#225e96;
+  --color-primary-2:#1d5a86;
+  --accent:#00c3ff;
+  --accent-2:#00de89;
+  --bg: #f4f7f9;
+  --text:#0b2130;
+  --muted: #6b7b87;
+
+  --radius-sm:8px;
+  --radius-md:12px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{font-family: 'Roboto', Arial, sans-serif; color:var(--text); background:var(--bg); -webkit-font-smoothing:antialiased}
+
+.container{max-width:var(--container); margin:0 auto; padding:0 20px}
+
+img{max-width:100%; display:block}
+
+a{color:inherit}
+button{font-family:inherit}

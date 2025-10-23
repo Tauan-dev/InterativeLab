@@ -1,0 +1,6 @@
+/* footer.css original - backup */
+footer{background:#0b2340;color:#fff;padding:28px 0}
+.footer-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.footer-grid a{color:#9ec6ff;text-decoration:none}
+
+@media (max-width:800px){.footer-grid{grid-template-columns:1fr}}

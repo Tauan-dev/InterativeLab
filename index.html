@@ -1,397 +1,812 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InteractiveLab - Análise de Desempenho no Futebol</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interative Lab</title>
-    <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="header.css">
-    <link rel="stylesheet" href="footer.css">
-    <link rel="stylesheet" href="content.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap" rel="stylesheet">
+      :root {
+        --primary: #0695bf;
+        --primary-dark: #225e96;
+        --secondary: #00c3ff;
+        --accent: #18b2c2;
+        --dark: #0a1628;
+        --light: #f8fafc;
+        --gray: #64748b;
+        --white: #ffffff;
+      }
 
+      body {
+        font-family: "Inter", sans-serif;
+        color: var(--dark);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
 
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta http-equiv="content-language" content="pt-br" />
-    <meta name="robots" content="index, follow" />
+      /* Header Moderno */
+      header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        transition: all 0.3s ease;
+      }
 
-    <!--[if lt IE 9]>
-        <script src="js/html5shiv.js"></script>
-    <![endif]-->
+      nav {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
 
-    <link rel="stylesheet" type="text/css" href="css/reset.css">
-    <link rel="stylesheet" type="text/css" href="css/styleTeam.css">
-    <link rel="stylesheet" type="text/css" href="css/fonts-icones.css">
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--primary);
+      }
 
-</head>
+      .logo img {
+        width: 50px;
+        height: 50px;
+      }
 
-<body>
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+        align-items: center;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: var(--dark);
+        font-weight: 500;
+        transition: color 0.3s;
+        position: relative;
+      }
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--primary);
+        transition: width 0.3s;
+      }
+
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+
+      .cta-button {
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: white;
+        padding: 0.75rem 2rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: transform 0.3s, box-shadow 0.3s;
+        box-shadow: 0 4px 15px rgba(6, 149, 191, 0.3);
+      }
+
+      .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 25px rgba(6, 149, 191, 0.4);
+      }
+
+      /* Hero Section */
+      .hero {
+        margin-top: 80px;
+        min-height: 90vh;
+        display: flex;
+        align-items: center;
+        background: linear-gradient(135deg, #0a1628 0%, #1e3a5f 100%);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(
+          circle,
+          rgba(6, 149, 191, 0.3),
+          transparent
+        );
+        border-radius: 50%;
+        top: -250px;
+        right: -250px;
+        animation: pulse 4s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 0.5;
+        }
+        50% {
+          transform: scale(1.1);
+          opacity: 0.8;
+        }
+      }
+
+      .hero-container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 4rem 2rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-content h1 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        color: white;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+      }
+
+      .hero-content .highlight {
+        background: linear-gradient(135deg, var(--secondary), var(--accent));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .hero-content p {
+        font-size: 1.25rem;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 2rem;
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, var(--secondary), var(--accent));
+        color: white;
+        padding: 1rem 2.5rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: all 0.3s;
+        box-shadow: 0 4px 20px rgba(0, 195, 255, 0.4);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 30px rgba(0, 195, 255, 0.6);
+      }
+
+      .btn-secondary {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        color: white;
+        padding: 1rem 2.5rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        transition: all 0.3s;
+      }
+
+      .btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.2);
+        border-color: rgba(255, 255, 255, 0.5);
+      }
+
+      .hero-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .hero-image img {
+        max-width: 100%;
+        height: auto;
+        filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+        animation: float 3s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      /* Features Section */
+      .features {
+        padding: 6rem 2rem;
+        background: var(--light);
+      }
+
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+        color: var(--dark);
+      }
+
+      .section-subtitle {
+        text-align: center;
+        font-size: 1.25rem;
+        color: var(--gray);
+        margin-bottom: 4rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .feature-card {
+        background: white;
+        padding: 2.5rem;
+        border-radius: 20px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        transition: all 0.3s;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 40px rgba(6, 149, 191, 0.15);
+      }
+
+      .feature-icon {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+        color: white;
+      }
+
+      .feature-card h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: var(--dark);
+      }
+
+      .feature-card p {
+        color: var(--gray);
+        line-height: 1.7;
+      }
+
+      /* Video Section */
+      .video-section {
+        padding: 6rem 2rem;
+        background: white;
+      }
+
+      .video-container {
+        max-width: 900px;
+        margin: 0 auto;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+      }
+
+      .video-container iframe {
+        width: 100%;
+        height: 500px;
+        border: none;
+      }
+
+      /* Team Section */
+      .team {
+        padding: 6rem 2rem;
+        background: var(--light);
+      }
+
+      .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .team-card {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        transition: all 0.3s;
+      }
+
+      .team-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 40px rgba(6, 149, 191, 0.15);
+      }
+
+      /* Team avatars: circular, centered and cropped */
+      .team-image {
+        width: 160px;
+        height: 160px;
+        margin: 0 auto 1rem;
+        border-radius: 50%;
+        overflow: hidden;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .team-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .team-info {
+        padding: 1.25rem 1.5rem 2rem;
+        text-align: center;
+      }
+
+      .team-info h3 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        color: var(--dark);
+      }
+
+      .team-info p {
+        color: var(--gray);
+        margin-bottom: 1rem;
+      }
+
+      .team-social {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      .social-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.9);
+        text-decoration: none;
+        transition: transform 0.18s ease, box-shadow 0.18s ease;
+        overflow: hidden;
+        padding: 6px;
+      }
+
+      .social-link img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+      }
+
+      .social-link:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+      }
+
+      /* Footer */
+      footer {
+        background: linear-gradient(135deg, #0a1628 0%, #1e3a5f 100%);
+        color: white;
+        padding: 4rem 2rem 2rem;
+      }
+
+      .footer-content {
+        max-width: 1280px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 3rem;
+        margin-bottom: 3rem;
+      }
+
+      .footer-section h3 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+      }
+
+      .footer-logos {
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .footer-logos img {
+        max-width: 120px;
+        height: auto;
+        filter: brightness(0) invert(1);
+        opacity: 0.8;
+        transition: opacity 0.3s;
+      }
+
+      .footer-logos img:hover {
+        opacity: 1;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .footer-bottom {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+
+        .hero-container {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+
+        .hero-content h1 {
+          font-size: 2.5rem;
+        }
+
+        .hero-buttons {
+          justify-content: center;
+        }
+
+        .features-grid,
+        .team-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .video-container iframe {
+          height: 300px;
+        }
+      }
+
+      /* Smooth Scroll */
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body>
     <header>
-        <div id="cabeca" class="flexHeader">
-            <div class="flexHeader">
-                <img id="logo" src=imagens/logo-ilab.png alt="Logo">
-
-                <h1 id="ilab">
-                    InterativeLab
-                </h1>
-            </div>
-
-            <div class="flexHeader">
-                <ul id="menu-h">
-                    <li>
-                        <a class="menu" href="#team-box" target="_self">Equipe</a>
-                    </li>
-                    <li>
-                        <a class="menu" href="https://www.scielo.br/j/motriz/a/m9skkTMrPzR6FfjT7DVqmrx/"
-                            target="_blank">Interative App</a>
-                    </li>
-                    <li>
-                        <a class="menu" href="#guide-box" target="_self">Guia</a>
-                    </li>
-                    <li>
-                        <a class="menu" href="#contato" target="_self">Contatos</a>
-                    </li>
-                </ul>
-            </div>
-
-
-            <a href="https://play.google.com/store/apps/details?id=com.interativelab" target="_blank">
-                <div>
-                    <button id="downloadbuttom">
-                        DOWNLOAD
-                    </button>
-                </div>
-            </a>
-
+      <nav>
+        <div class="logo">
+          <span>⚽</span>
+          <span>InteractiveLab</span>
         </div>
+        <ul class="nav-links">
+          <li><a href="#features">Funcionalidades</a></li>
+          <li><a href="#guide">Guia</a></li>
+          <li><a href="#team">Equipe</a></li>
+          <li><a href="#contact">Contato</a></li>
+        </ul>
+        <a
+          href="https://play.google.com/store/apps/details?id=com.interativelab"
+          class="cta-button"
+          target="_blank"
+          >Download</a
+        >
+      </nav>
     </header>
 
-    <main>
-        <div id="top-box" class="flex">
-
-            <div class="flexHeader">
-                <img class='login' src=imagens/celular-login.png alt="Tela de login">
-            </div>
-
-            <div class="flexColumn">
-                <div class="flexColumn">
-                    <div>
-                        <h1 class="topo-1">
-                            O SOFTWARE DE ANÁLISE DE DESEMPENHO NO FUTEBOL
-                        </h1>
-                    </div>
-
-                    <div class="flexColumn">
-                        <h2 class="topo-2">
-                            Desenvolvido para auxiliar nas tomadas de decisão utilizando redes sociais
-                        </h2>
-                    </div>
-
-                </div>
-
-                <a href="https://ilab-webapp-2.vercel.app/" target="_blank">
-                    <div>
-                        <button id='ilabknow'>
-                            Visualizador Web
-                        </button>
-                    </div>
-                </a>
-            </div>
-
-
-
+    <section class="hero">
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1>
+            O software de
+            <span class="highlight">análise de desempenho</span> no futebol
+          </h1>
+          <p>
+            Desenvolvido para auxiliar nas tomadas de decisão utilizando redes
+            sociais e análise em tempo real
+          </p>
+          <div class="hero-buttons">
+            <a
+              href="https://play.google.com/store/apps/details?id=com.interativelab"
+              class="btn-primary"
+              target="_blank"
+            >
+              📱 Baixar App
+            </a>
+            <a
+              href="https://ilab-webapp-2.vercel.app/"
+              class="btn-secondary"
+              target="_blank"
+            >
+              🌐 Visualizador Web
+            </a>
+          </div>
         </div>
-
-
-        <div id="midle-box">
-            <h1 class="flexColumn">
-                Interactive App
-            </h1>
-            <div class="flexColumn">
-                <p>
-                    A ferramenta que o treinador precisa para avaliar o desempenho individual e coletivo de seus
-                    jogadores
-                    em tempo real. Utilizando a análise de redes sociais (ARS), o InteractiveLab possibilita a coleta
-                    das
-                    interações dos jogadores por meio da troca de passes e a visualização gráfica das diferentes ações
-                    ofensivas para interpretar o comportamento ofensivo da equipe e intervir com tomadas de decisões
-                    mais
-                    precisas e eficazes. Além da análise em tempo real o treinador poderá armazenar os jogos coletados
-                    em um
-                    banco de dados em nuvem para análise da evolução da equipe ao longo da temporada.
-                </p>
-            </div>
-
+        <div class="hero-image">
+          <img
+            src="imagens/celular-login.png"
+            alt="App InteractiveLab"
+            onerror="this.style.display='none'"
+          />
         </div>
+      </div>
+    </section>
 
+    <section id="features" class="features">
+      <div class="container">
+        <h2 class="section-title">Interactive App</h2>
+        <p class="section-subtitle">
+          A ferramenta que o treinador precisa para avaliar o desempenho
+          individual e coletivo em tempo real
+        </p>
 
-        <div id="function-box" class="flexColumn">
-            <h1 class="flexFunction">
-                Funcionalidades
-            </h1>
-            <div class="flexFunction">
-                <div>
-                    <img src=imagens/funcionalidade-final.png alt="Tela de login">
-                </div>
-                <ul>
-                    <li>
-                        Cadastramento e gerenciamento de torneios, equipes e jogadores
-                    </li>
-
-                    <li>
-                        Possibilidade de coletas múltiplas e simultâneas que podem ser sincronizadas
-                    </li>
-
-                    <li>
-                        Acompanhamento da evolução do comportamento das equipes em tempo real
-                    </li>
-
-                    <li>
-                        Relatórios diversificados e personalizados conforme o interesse do treinador, em tempo real
-                    </li>
-
-                    <li>
-                        Armazenamento das coletas em banco de dados para futuras análises
-                    </li>
-
-                    <li>
-                        Extração dos resultados para comunicar com diferentes softwares de análise
-                    </li>
-
-                    <li>
-                        Compartilhamento dos dados com a equipe técnica e demais interessados
-                    </li>
-                </ul>
-            </div>
-
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">👥</div>
+            <h3>Gerenciamento Completo</h3>
+            <p>
+              Cadastramento e gerenciamento de torneios, equipes e jogadores em
+              uma única plataforma
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h3>Análise em Tempo Real</h3>
+            <p>
+              Acompanhamento da evolução do comportamento das equipes durante as
+              partidas
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔄</div>
+            <h3>Coletas Simultâneas</h3>
+            <p>
+              Possibilidade de realizar múltiplas coletas que podem ser
+              sincronizadas automaticamente
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📈</div>
+            <h3>Relatórios Personalizados</h3>
+            <p>
+              Relatórios diversificados conforme o interesse do treinador,
+              disponíveis em tempo real
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">☁️</div>
+            <h3>Banco de Dados em Nuvem</h3>
+            <p>
+              Armazenamento seguro das coletas para futuras análises e
+              acompanhamento da evolução
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🤝</div>
+            <h3>Compartilhamento</h3>
+            <p>
+              Compartilhe dados facilmente com a equipe técnica e demais
+              interessados
+            </p>
+          </div>
         </div>
+      </div>
+    </section>
 
-
-
-        <div id='guide-box' class="flex"> <a name='guide-box'> </a>
-            <div class="flex">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/VRmrNOQJ3HY"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
-            </div>
+    <section id="guide" class="video-section">
+      <div class="container">
+        <h2 class="section-title">Guia de Uso</h2>
+        <p class="section-subtitle">
+          Aprenda a utilizar todas as funcionalidades do InteractiveLab
+        </p>
+        <div class="video-container">
+          <iframe
+            src="https://www.youtube.com/embed/VRmrNOQJ3HY"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          >
+          </iframe>
         </div>
+      </div>
+    </section>
 
-        <div class="team">
+    <section id="team" class="team">
+      <div class="container">
+        <h2 class="section-title">Nossa Equipe</h2>
+        <p class="section-subtitle">
+          Conheça os profissionais por trás do InteractiveLab
+        </p>
 
-            <h1>
-                Equipe <a name="team-box"></a>
-            </h1>
-
-           
-                <div class="main_contentcontainer">
-                    <section class="section-seu-codigo container">
-
-                        <div class="content">
-
-                            <div class="box-artigo">
-                                
-                                <div class="responsiveGrid">
-                                    <div>
-                                        <figure class="card-blue">
-    
-                                            <div class="img-box"> <img src="uploads/marcosMenuchi.png"> </div>
-        
-                                            <figcaption class="desc degradeBlue">
-        
-                                                <h4>Dr. Marcos Rodrigo Trindade Pinheiro Menuchi <br><span>Coordenador</span>
-                                                </h4>
-        
-                                                <ul>
-        
-                                                    <li>
-                                                        <a href="http://lattes.cnpq.br/4491943206989860" target="_blank"><i
-                                                                class="icon icon-laptop-1"></i></a>
-                                                    </li>
-        
-                                                </ul>
-        
-                                            </figcaption>
-        
-                                        </figure>
-                                        <!--card Blue-->
-        
-                                        <figure class="card-blue">
-        
-                                            <div class="img-box"> <img src="uploads/marceloHonda.png"> </div>
-        
-                                            <figcaption class="desc degradeBlue">
-        
-                                                <h4>Dr. Marcelo Ossamu Honda <br><span>Colaborador</span></h4>
-        
-                                                <ul>
-        
-                                                    <li>
-                                                        <a href="http://lattes.cnpq.br/6034292784604751" target="_blank"><i
-                                                                class="icon icon-laptop-1"></i></a>
-                                                    </li>
-        
-                                                </ul>
-        
-                                            </figcaption>
-        
-                                        </figure>
-                                        <!--card Blue-->
-        
-                                        <figure class="card-blue">
-        
-                                            <div class="img-box"> <img src="uploads/matheusAlmeida.png"> </div>
-        
-                                            <figcaption class="desc degradeBlue">
-        
-                                                <h4>Matheus Almeida Santos Anjos <br><span>Desenvolvedor</span></h4>
-        
-                                                <ul>
-        
-                                                    <li>
-                                                        <a href="https://www.linkedin.com/in/matheus-almeida-0504a4150/"
-                                                            target="_blank"><i class="icon icon-linkedin"></i></a>
-                                                    </li>
-        
-                                                </ul>
-        
-                                            </figcaption>
-        
-                                        </figure>
-                                        <!--card Blue-->
-                                    </div>
-                                    
-                                    <div>
-                                        <div class="box-artigo">
-                                            <figure class="card-blue">
-        
-                                                <div class="img-box"> <img src="uploads/matheusCardoso.png"> </div>
-        
-                                                <figcaption class="desc degradeBlue">
-        
-                                                    <h4>Matheus Santos Cardoso da Silva <br><span>Desenvolvedor</span></h4>
-        
-                                                    <ul>
-                                                        <li>
-                                                            <a href="http://lattes.cnpq.br/3074232665565402" target="_blank"><i
-                                                                    class="icon icon-laptop-1"></i></a>
-                                                        </li>
-        
-                                                        <li>
-                                                            <a href="https://www.linkedin.com/in/cardosom/" target="_blank"><i
-                                                                    class="icon icon-linkedin"></i></a>
-                                                        </li>
-        
-                                                    </ul>
-        
-                                                </figcaption>
-        
-                                            </figure>
-        
-                                            <figure class="card-blue">
-        
-                                                <div class="img-box"> <img src="uploads/tauanNeres.png"> </div>
-        
-                                                <figcaption class="desc degradeBlue">
-        
-                                                    <h4>Tauan Neres Silva <br><span>Bolsista - PIBITI</span></h4>
-        
-                                                    <ul>
-        
-                                                        <li> <a href="https://www.linkedin.com/in/tauan-neres-585b02199/"
-                                                                target="_blank"><i class="icon icon-linkedin"></i></a>
-                                                        </li>
-        
-                                                    </ul>
-        
-                                                </figcaption>
-        
-                                            </figure>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-     
-                              
-                            </div>
-                            <!--Box Artigo-->
-
-                        </div>
-                    </section>
-                </div>
-
-            
-
-        </div>
-    </main>
-
-    <script src="js/jquery.js"></script>
-    <script src="js/script.js"></script>
-
-    <footer id='rodape'>
-        <div>
-            <div class="flexFooter">
-                <div class="flexColumn" id="footerBox1">
-                    <div>
-                        Realização
-                    </div>
-
-                    <div class="flex">
-                        <img class='uesc' src=imagens/simbolo_uesc.png alt="UESC in Altum">
-                        <img class='gepecom' src=imagens/logo-GEPECOM.png alt="GEPECOM">
-                    </div>
-
-                </div>
-
-                <div class="flexColumn" id="footerBox2">
-                    <div>
-                        Apoio
-                    </div>
-
-                    <img class='nbcgib' src=imagens/nbcgib_logo.png alt="GEPECOM">
-
-                </div>
-
+        <div class="team-grid">
+          <div class="team-card">
+            <div class="team-image">
+              <img src="uploads/marcosMenuchi.png" alt="Marcos Menuchi" />
             </div>
-
-            <div class="flexColumn">
-                <div class="flexColumn">
-                    <div class="flex">
-                        Contatos <a name='contato'> </a>
-                    </div>
-                </div>
-
-                <ul class="flex">
-                    <li>
-                        <a href="https://www.instagram.com/gepecom_uesc/" target="_blank" ref="external"><img
-                                class='social' src="./imagens/icons8-instagram-velho.svg" alt="instagram"></a>
-                    </li>
-                    <li>
-                        <a href="https://www.facebook.com/groups/310558622430762" target="_blank" ref="external"><img
-                                class='social' src="./imagens/icons8-facebook.svg" alt="facebook"></a>
-                    </li>
-                </ul>
+            <div class="team-info">
+              <h3>Dr. Marcos Rodrigo Trindade Pinheiro Menuchi</h3>
+              <p>Coordenador</p>
+              <div class="team-social">
+                <a
+                  href="http://lattes.cnpq.br/4491943206989860"
+                  class="social-link"
+                  target="_blank"
+                  ><img src="imagens/lattes.svg" alt="Lattes"
+                /></a>
+              </div>
             </div>
-
+          </div>
+          <div class="team-card">
+            <div class="team-image">
+              <img src="uploads/tauanNeres.png" alt="Tauan Neres" />
+            </div>
+            <div class="team-info">
+              <h3>Tauan Neres Silva</h3>
+              <p>Desenvolvedor Frontend</p>
+              <div class="team-social">
+                <a
+                  href="https://www.linkedin.com/in/tauan-neres-silva-585b02199/"
+                  class="social-link"
+                  target="_blank"
+                  ><img src="imagens/linkedin.svg" alt="LinkedIn"
+                /></a>
+              </div>
+            </div>
+          </div>
+          <div class="team-card">
+            <div class="team-image">
+              <img src="uploads/matheusAlmeida.png" alt="Matheus Almeida" />
+            </div>
+            <div class="team-info">
+              <h3>Matheus Almeida Santos Anjos</h3>
+              <p>Desenvolvedor Mobile</p>
+              <div class="team-social">
+                <a
+                  href="https://www.linkedin.com/in/matheus-almeida-0504a4150/"
+                  class="social-link"
+                  target="_blank"
+                  ><img src="imagens/linkedin.svg" alt="LinkedIn"
+                /></a>
+              </div>
+            </div>
+          </div>
+          <div class="team-card">
+            <div class="team-image">
+              <img src="uploads/matheusCardoso.png" alt="Matheus Cardoso" />
+            </div>
+            <div class="team-info">
+              <h3>Matheus Santos Cardoso da Silva</h3>
+              <p>Desenvolvedor Backend</p>
+              <div class="team-social">
+                <a
+                  href="http://lattes.cnpq.br/3074232665565402"
+                  class="social-link"
+                  target="_blank"
+                  ><img src="imagens/lattes.svg" alt="Lattes"
+                /></a>
+                <a
+                  href="https://www.linkedin.com/in/cardosom/"
+                  class="social-link"
+                  target="_blank"
+                  ><img src="imagens/linkedin.svg" alt="LinkedIn"
+                /></a>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <h2>gepecom@uesc.br</h2>
-        <h1>Feito com amor pelo GEPECOM | 2022</h1>
-
+    <footer id="contact">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Realização</h3>
+          <div class="footer-logos">
+            <img
+              src="imagens/simbolo_uesc.png"
+              alt="UESC"
+              onerror="this.style.display='none'"
+            />
+            <img
+              src="imagens/logo-GEPECOM.png"
+              alt="GEPECOM"
+              onerror="this.style.display='none'"
+            />
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Apoio</h3>
+          <div class="footer-logos">
+            <img
+              src="imagens/nbcgib_logo.png"
+              alt="NBCGIB"
+              onerror="this.style.display='none'"
+            />
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Contato</h3>
+          <p>gepecom@uesc.br</p>
+          <div class="social-links">
+            <a
+              href="https://www.instagram.com/gepecom_uesc/"
+              class="social-link"
+              target="_blank"
+              ><img src="imagens/icons8-instagram-velho.svg" alt="Instagram"
+            /></a>
+            <a
+              href="https://www.facebook.com/groups/310558622430762"
+              class="social-link"
+              target="_blank"
+              ><img src="imagens/icons8-facebook.svg" alt="Facebook"
+            /></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Feito com amor pelo GEPECOM | 2025</p>
+      </div>
     </footer>
-
-
-</body>
-
+  </body>
 </html>

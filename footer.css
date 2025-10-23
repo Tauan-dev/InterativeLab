@@ -1,89 +1,11 @@
-@charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600&display=swap');
+/* footer.css foi movido para legacy/footer.css
+   Este arquivo é um placeholder para evitar referências acidentais
+   e garantir que o projeto use os novos arquivos em css/*.css.
 
-footer{
-    width: 100%;
-    height: 420px;
-    padding: 0px;
-    
-    background: rgba(6, 149, 191, 0.91);
-    grid-template-columns: 1fr,1fr;
-    grid-template-rows: auto;
-    grid-template-areas: "Realização" "Apoio" 
-                        "Rede Sociais" "Rede Sociais";
-    /*grid-gap: 10px;*/
-}
+   Novos arquivos principais:
+   - css/base.css
+   - css/layout.css
+   - css/components.css
 
-
-#footerBox1{
-    padding:30px;
-    margin-left: 100px;
-}
-
-#footerBox2{
-    padding:30px;
-    margin-right: 100px;
-}
-
-.flexFooter{
-    display: flex;
-    justify-content: space-between;
-}
-
-#rodape div{
-    color: #FFFF;
-    font-family: 'Roboto';
-    font-size:32px;
-}
-
-#rodape h1{
-    color: #FFFF;
-    font-family: 'Nunito Sans', sans-serif;
-    font-style: normal;
-    font-size: 20px;
-    text-align: center;
-    font-weight:600;
-
-}
-
-#rodape h2{
-    color: #FFFF;
-    font-family: 'Nunito Sans', sans-serif;
-    font-style: normal;
-    font-size: 18px;
-    text-align: center;
-    font-weight:600;
-
-}
-
-#rodape ul {
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    padding-inline-start: 0px;
-}
-
-#rodape li{
-    list-style-type:none ;
-}
-
-.social {  
-    width: 65px;
-    height: 60px;
-}
-
-.uesc {
-    max-width: 189px;
-    max-height:163px;
-}
-
-.gepecom {
-    max-width: 172px;
-    max-height:162px;
-}
-
-
-.nbcgib {
-    max-width: 172px;
-    max-height: 162px;
-}
+   Se precisar restaurar o conteúdo antigo, verifique legacy/footer.css
+*/

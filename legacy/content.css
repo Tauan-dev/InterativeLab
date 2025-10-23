@@ -1,0 +1,10 @@
+/* Conteúdo original de content.css salvo em legacy para referência. */
+@charset "UTF-8";
+/* Estilos antigos — mantidos como backup apenas. */
+body{background:#fff}
+.wrap{max-width:1100px;margin:0 auto}
+.hero{padding:36px 0}
+.hero h1{font-size:44px;color:#222}
+.function-list{display:flex;gap:20px}
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+/* ...conteúdo resumido... */
